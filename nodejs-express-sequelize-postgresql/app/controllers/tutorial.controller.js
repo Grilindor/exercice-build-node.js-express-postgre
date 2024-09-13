@@ -37,7 +37,7 @@ exports.create = (req, res) => {
 // Retrieve objects (with condition).
 exports.findAll = (req, res) => {
   const title = req.query.title;
-  var condition = title ? { title: { [Op.iLike]: '%${title}%' } }: null;
+  var condition = title ? { title: { [Op.iLike]: `%${title}%` } } : null;
 
   Tutorial.findAll({ where: condition })
     .then(data => {
