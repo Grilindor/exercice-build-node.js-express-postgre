@@ -4,7 +4,7 @@ const Sequelize = require("sequelize");
 const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
   host: dbConfig.HOST,
   dialect: dbConfig.dialect,
-  // operatorsAliases: false,
+  // operatorsAliases: false, ne marche plus dans la v-5
 
   pool: {
     max: dbConfig.pool.max,
